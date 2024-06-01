@@ -6,7 +6,7 @@ const clapCountRoutes = require('../routes/clapCount.routes');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({ origin: '*' }));
