@@ -9,14 +9,7 @@ const app = express();
 const port = 5000;
 
 // Middleware
-app.use(cors(
-    {
-        origin: process.env.DOMAIN_URL,
-        allowedHeaders: 'Content-Type, Authorization',
-        methods: 'GET, POST',
-        optionsSuccessStatus: 200,
-    }
-));
+app.use(cors({ origin: '*' }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
