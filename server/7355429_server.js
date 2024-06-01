@@ -11,12 +11,7 @@ const port = 5000;
 // Middleware
 app.use(cors(
     {
-        origin: [
-            'https://www.briancoupama.re',
-            'http://localhost:3000',
-            'http://localhost:5000',
-            'https://briancoupama.re',
-        ],
+        origin: process.env.DOMAIN_URL,
         allowedHeaders: 'Content-Type, Authorization',
         methods: 'GET, POST',
         optionsSuccessStatus: 200,
