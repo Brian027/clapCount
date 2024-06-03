@@ -1,5 +1,6 @@
 // clapCount.controller.js
 const { readClapCount, writeClapCount } = require('../data/clapCountService');
+const dotenv = require('dotenv').config();
 
 const getClapCount = async (req, res) => {
     try {
@@ -21,13 +22,4 @@ const addClapCount = async (req, res) => {
     }
 };
 
-const clearClapCount = async (req, res) => {
-    try {
-        writeClapCount(0);
-        res.status(200).json({ message: 'Clap count cleared' });
-    } catch (error) {
-        res.status(500).json({ message: 'Server error', error: error.message });
-    }
-};
-
-module.exports = { getClapCount, addClapCount, clearClapCount };
+module.exports = { getClapCount, addClapCount };
